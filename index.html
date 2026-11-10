@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#09131e">
+  <title>Muhammad Dawood — Remote Sensing &amp; GIS | Earth Observation Portfolio</title>
+  <meta name="description" content="Muhammad Dawood: Remote Sensing and GIS researcher. Land cover, land surface temperature, vegetation and SAR analysis with Sentinel, Landsat and MODIS. Open to scholarships and research collaboration.">
+  <meta name="author" content="Muhammad Dawood">
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Muhammad Dawood — Remote Sensing &amp; GIS">
+  <meta property="og:description" content="From satellite signal to environmental decision.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Muhammad Dawood","jobTitle":"Remote Sensing & GIS Professional","address":{"@type":"PostalAddress","addressLocality":"Faisalabad","addressCountry":"PK"},"knowsAbout":["Remote sensing","GIS","Land use land cover","Land surface temperature","NDVI","SAR"]}</script>
+</head>
+<body>
+  <a class="skip" href="#home">Skip to main content</a>
+  <div id="progress"></div>
+  <header class="site-header" id="header">
+    <div class="shell nav">
+      <a href="#home" class="brand" aria-label="Home"><span class="mark"><i></i></span><span id="brandName">GEOVISTA</span></a>
+      <nav class="menu" id="menu" aria-label="Primary"></nav>
+      <div class="actions">
+        <button class="icon-btn" id="themeBtn" type="button" aria-label="Toggle theme">☾</button>
+        <button class="icon-btn burger" id="burger" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="auto" poster="assets/hero-earth.jpg" aria-hidden="true"><source src="assets/Hero Earth video.mp4" type="video/mp4"></video>
+  <canvas id="heroCanvas" aria-hidden="true"></canvas>
+
+  <div class="hero-hud" aria-hidden="true">
+    <i class="b tl"></i><i class="b tr"></i><i class="b bl"></i><i class="b br"></i>
+    <span class="hud-t">SENSOR · SENTINEL-2 · 10 m</span>
+    <span class="hud-b">CURSOR <b id="hudCoord">31.4200°N · 73.0800°E</b></span>
+  </div>
+
+  <div class="shell hero-center">
+    <p class="eyebrow">Field notes / 00 · Earth observation</p>
+    <h1>Muhammad <span>Dawood</span></h1>
+    <p class="role">I do <b id="typed"></b></p>
+    <p class="lead" id="heroLead"></p>
+    <div class="hero-actions">
+      <a class="btn primary" href="#projects">View my work ↓</a>
+      <a class="btn ghost" href="#gallery">See the gallery</a>
+      <a class="btn ghost" href="#contact">Contact me →</a>
+    </div>
+    <div class="hero-meta">
+      <div><small>SENSORS</small><b>Sentinel · Landsat · MODIS</b></div>
+      <div><small>FOCUS</small><b>LULC · LST · NDVI · SAR</b></div>
+      <div><small>BASE</small><b>Faisalabad, Pakistan</b></div>
+    </div>
+    <div class="micro"><span class="dot"></span><span id="avail"></span></div>
+  </div>
+
+  <div class="ticker" aria-hidden="true"><div class="ticker-track" id="ticker"></div></div>
+</section>
+    <section id="about" class="section"><div class="shell">
+      <div class="heading reveal"><p class="eyebrow">01 / Profile</p><h2>Geospatial thinking for a changing planet.</h2><p class="intro">Research, planning, agriculture, climate and environmental management — seen from orbit, decided on the ground.</p></div>
+      <div class="about reveal" id="aboutBody"></div>
+      <div class="counters reveal" id="counters"></div>
+    </div></section>
+
+    <section id="experience" class="section alt"><div class="shell">
+      <div class="heading reveal"><p class="eyebrow">02 / Professional Journey</p><h2>From geospatial question to usable output.</h2></div>
+      <div class="timeline reveal" id="expList"></div>
+    </div></section>
+
+    <section id="skills" class="section"><div class="shell">
+      <div class="heading reveal"><p class="eyebrow">03 / Capability map</p><h2>Tools for seeing patterns at scale.</h2><p class="intro">Indicative self-assessment levels — a learning snapshot, not a credential.</p></div>
+      <div class="skills reveal" id="skillGrid"></div>
+    </div></section>
+
+    <section id="projects" class="section alt"><div class="shell">
+      <div class="heading reveal"><p class="eyebrow">04 / Selected work</p><h2>Projects that turn signal into context.</h2><p class="intro">Filter by discipline and open any card for the full project note.</p></div>
+      <div class="filters" id="filters" role="group" aria-label="Filter projects"></div>
+      <div class="projects" id="projectGrid"></div>
+    </div></section>
+
+    <section id="research" class="section"><div class="shell">
+      <div class="heading reveal"><p class="eyebrow">05 / Research agenda</p><h2>Questions worth mapping.</h2></div>
+      <div class="research reveal" id="researchGrid"></div>
+    </div></section>
+
+    <section id="certifications" class="section alt"><div class="shell">
+      <div class="heading reveal"><p class="eyebrow">06 / Certifications</p><h2>Credentials, when they are ready to verify.</h2></div>
+     <!-- <p class="intro">Add verified credentials in the <code>DATA.certifications</code> array in <code>script.js</code>. Each credential opens its own detail page.</p> -->
+      <div class="reveal" id="certList"></div>
+    </div></section>
+
+    <section id="gallery" class="section"><div class="shell">
+      <div class="heading reveal"><p class="eyebrow">07 / Gallery</p><h2>Maps, imagery and field moments.</h2><p class="intro">Click any frame to view it larger. Use ← → to browse, Esc to close.</p></div>
+      <div class="filters" id="gFilters" role="group" aria-label="Filter gallery"></div>
+      <div class="gallery" id="galleryGrid"></div>
+    </div></section>
+
+    <section id="contact" class="section alt"><div class="shell contact">
+      <div class="reveal"><p class="eyebrow">08 / Contact</p><h2>Let’s work with the landscape.</h2>
+        <p>For research collaborations, GIS analysis, environmental monitoring, WebGIS work, or a thoughtful conversation about geospatial data.</p><div id="contactLinks"></div></div>
+      <form id="form" class="reveal" novalidate>
+        <div class="fg">
+          <div><label for="name">Name</label><input id="name" name="name" maxlength="80" autocomplete="name"><span class="err" data-for="name"></span></div>
+          <div><label for="email">Email</label><input id="email" name="email" type="email" maxlength="120" autocomplete="email"><span class="err" data-for="email"></span></div>
+          <div class="full"><label for="subject">Subject</label><input id="subject" name="subject" maxlength="120"><span class="err" data-for="subject"></span></div>
+          <div class="full"><label for="message">Message</label><textarea id="message" name="message" maxlength="1200" placeholder="Tell me a little about your project or question (at least 20 characters)"></textarea><span class="err" data-for="message"></span></div>
+        </div>
+        <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0">
+        <button class="btn primary" type="submit">Send message ➤</button>
+        <p class="note" id="formNote" role="status"></p>
+      </form>
+    </div></section>
+
+  </main>
+
+  <footer class="site-footer"><div class="shell foot">
+    <div><div class="brand"><span class="mark"><i></i></span><span id="footBrand">GEOVISTA</span></div><p id="copy"></p></div>
+    <nav><a href="#about">About</a><a href="#map">Map</a><a href="#projects">Projects</a><a href="#certifications">Certifications</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a></nav>
+  </div></footer>
+
+  <button class="icon-btn" id="top" type="button" aria-label="Back to top">↑</button>
+
+  <div class="backdrop" id="backdrop"><article class="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+    <div class="modal-h"><div><p class="eyebrow" id="mEye"></p><h2 id="mTitle"></h2></div><button class="icon-btn" id="mClose" type="button" aria-label="Close">✕</button></div>
+    <div id="mBody"></div></article></div>
+
+  <div class="backdrop lb" id="lb" role="dialog" aria-modal="true" aria-label="Gallery viewer">
+    <button class="icon-btn lb-x" id="lbClose" type="button" aria-label="Close">✕</button>
+    <button class="icon-btn lb-n lb-p" id="lbPrev" type="button" aria-label="Previous">‹</button>
+    <figure class="lb-fig"><div class="lb-art" id="lbArt"></div><figcaption id="lbCap"></figcaption></figure>
+    <button class="icon-btn lb-n lb-nx" id="lbNext" type="button" aria-label="Next">›</button>
+  </div>
+
+  <input type="file" id="upPhoto" accept="image/*" hidden>
+  <script src="script.js"></script>
+  <script src="geomap.js"></script>
+  <script src="compare.js"></script>
+</body>
+</html>

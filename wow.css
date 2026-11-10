@@ -1,0 +1,89 @@
+/* GeoVista — wow.css v2: visible redesign layer. Load AFTER style.css. */
+::selection{background:var(--lime2);color:#0b1720}
+body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+#progress{height:4px;box-shadow:0 0 16px var(--lime2)}
+
+/* header: keep the floating pill, swap the rainbow for a calm lime-to-cyan edge, guarantee legible text */
+.nav{background:rgba(7,15,24,.8)!important}
+.nav::before{padding:1.5px!important;background:conic-gradient(from var(--ang),#b7e35e,#5ac8d8,#2e9fb1,rgba(183,227,94,.15),#b7e35e)!important}
+.nav::after{background:conic-gradient(from var(--ang),#b7e35e,#5ac8d8,#2e9fb1,#b7e35e)!important;opacity:.16!important}
+.site-header .brand,.site-header .menu a:hover,.site-header .menu a[aria-current=true]{color:#fff}
+.site-header .menu a{color:#b6c7cf}.site-header .menu a[aria-current=true]::after{transform:scaleX(1)}
+.site-header .icon-btn{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.2);color:#fff}
+
+/* hero: aurora, orbiting satellites, staged entrance, cursor light */
+.hero{background:radial-gradient(900px 520px at 12% 18%,rgba(46,159,177,.32),transparent 62%),radial-gradient(800px 520px at 88% 85%,rgba(183,227,94,.18),transparent 60%),var(--navy)}
+.hero h1{font-size:clamp(2.4rem,6.2vw,5rem);letter-spacing:-.05em;text-wrap:balance}
+.hero h1 span{filter:drop-shadow(0 0 30px rgba(183,227,94,.45))}
+.orbits{position:absolute;left:50%;top:50%;width:min(1180px,125vw);aspect-ratio:1;transform:translate(-50%,-50%) perspective(1300px) rotateX(70deg) rotateZ(-14deg);z-index:0;pointer-events:none}
+.orbits i{position:absolute;inset:0;border:1px solid rgba(183,227,94,.3);border-radius:50%;animation:wowSpin 54s linear infinite}
+.orbits i:nth-child(2){inset:13%;border-color:rgba(90,200,216,.38);animation-duration:36s;animation-direction:reverse}
+.orbits i:nth-child(3){inset:27%;border-color:rgba(237,244,241,.22);animation-duration:24s}
+.orbits i::after{content:"";position:absolute;top:-6px;left:50%;width:12px;height:12px;margin-left:-6px;border-radius:50%;background:var(--lime2);box-shadow:0 0 22px 6px rgba(183,227,94,.75)}
+.orbits i:nth-child(2)::after{background:#5ac8d8;box-shadow:0 0 22px 6px rgba(90,200,216,.75)}
+@keyframes wowSpin{to{transform:rotate(360deg)}}
+.hero-center>*{animation:wowUp 1s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i,0)*110ms + 200ms)}
+.hero-center>:nth-child(2){--i:1}.hero-center>:nth-child(3){--i:2}.hero-center>:nth-child(4){--i:3}.hero-center>:nth-child(5){--i:4}.hero-center>:nth-child(6){--i:5}.hero-center>:nth-child(7){--i:6}
+@keyframes wowUp{from{opacity:0;transform:translateY(28px);filter:blur(8px)}}
+.wow-spot{position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(560px circle at var(--mx,50%) var(--my,40%),rgba(183,227,94,.18),rgba(46,159,177,.1) 42%,transparent 70%)}
+.hero-meta div{transition:border-color .3s,transform .3s}.hero-meta div:hover{border-color:var(--lime2);transform:translateY(-4px)}
+.btn.primary{box-shadow:0 12px 34px -8px rgba(183,227,94,.65)}
+
+/* evidence strip: a dark instrument panel continuing the hero */
+.glance{position:relative;z-index:2;background:linear-gradient(180deg,#09131e,#0d1e2d);border-bottom:1px solid rgba(183,227,94,.2);color:#ecf2ee}
+.glance-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.glance-grid>div{padding:1.2rem 1.2rem;border-left:1px solid rgba(237,244,241,.12)}
+.glance-grid>div:first-child{border-left:0;padding-left:0}
+.glance b{display:block;font:600 clamp(1.8rem,3.2vw,2.5rem)/1 var(--display);letter-spacing:-.05em;background:linear-gradient(120deg,#b7e35e,#5ac8d8);-webkit-background-clip:text;background-clip:text;color:transparent}
+.glance b.txt{font-size:clamp(.95rem,1.3vw,1.1rem);padding-top:.35rem;white-space:nowrap;letter-spacing:-.02em}
+.glance span{display:block;margin-top:.3rem;color:#8ea4ad;font:.74rem var(--mono)}
+@media(max-width:760px){.glance-grid{grid-template-columns:1fr 1fr}.glance-grid>div:nth-child(3){border-left:0;padding-left:0}.glance-grid>div:nth-child(n+3){border-top:1px solid rgba(237,244,241,.12)}}
+
+/* sections: each gets an ambient glow in its own hue, plus oversized numerals */
+
+.section{padding:3.6rem 0;overflow:clip}
+.section>.shell{position:relative;z-index:1}
+.section::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(640px 420px at 100% 0,color-mix(in srgb,var(--ol-strong,var(--lime)) 16%,transparent),transparent 70%),radial-gradient(520px 360px at 0 100%,color-mix(in srgb,var(--blue) 12%,transparent),transparent 70%)}
+.section+.section::before{content:"";position:absolute;top:0;left:50%;z-index:1;width:min(1180px,calc(100% - 3rem));height:1px;transform:translateX(-50%);background:linear-gradient(90deg,transparent,var(--lime) 50%,transparent);opacity:.45}
+
+.heading p.intro,.lead,.t-card p{text-wrap:pretty}
+
+/* cards: glass, lit by the cursor, tilted in 3D */
+.glow{position:relative}
+.gl{position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(360px circle at var(--cx,50%) var(--cy,50%),color-mix(in srgb,var(--ol-strong,var(--lime)) 26%,transparent),transparent 62%)}
+.glow:hover>.gl{opacity:1}
+.proj,.stat,.t-card,.counters,.cv-card,.cmp-card{backdrop-filter:blur(6px);transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .3s,box-shadow .35s}
+.proj:hover,.t-card:hover{box-shadow:0 34px 90px -30px color-mix(in srgb,var(--ol-strong,var(--lime)) 55%,transparent),var(--shadow)}
+:root[data-theme=dark] .proj,:root[data-theme=dark] .t-card,:root[data-theme=dark] .stat{background:linear-gradient(160deg,rgba(255,255,255,.05),rgba(255,255,255,.015)),var(--card)}
+
+/* navigation awareness */
+.menu a[aria-current=true]{color:var(--lime)}
+.rail{position:fixed;right:1.1rem;top:50%;z-index:90;transform:translateY(-50%);display:none;flex-direction:column;gap:.2rem}
+@media(min-width:1320px){.rail{display:flex}}
+.rail a{position:relative;display:block;width:22px;height:22px}
+.rail a::before{content:"";position:absolute;inset:7px;border-radius:50%;background:var(--muted);opacity:.5;transition:.25s}
+.rail a:hover::before,.rail a[aria-current=true]::before{inset:5px;background:var(--lime2);opacity:1;box-shadow:0 0 0 4px color-mix(in srgb,var(--lime2) 25%,transparent)}
+.rail a span{position:absolute;right:30px;top:50%;transform:translate(8px,-50%);padding:.25rem .6rem;border-radius:99px;background:var(--navy);color:#ecf2ee;font:.68rem var(--mono);white-space:nowrap;opacity:0;pointer-events:none;transition:.2s}
+.rail a:hover span,.rail a:focus-visible span{opacity:1;transform:translate(0,-50%)}
+
+@media(prefers-reduced-motion:reduce){.hero-center>*,.orbits i{animation:none}.wow-spot{display:none}}
+
+/* ---- compact mode: shorter hero, tighter sections and cards ---- */
+.hero{min-height:min(100svh,660px);padding:6rem 0 4.2rem}
+.hero-center .lead{margin-top:.8rem;font-size:1rem;max-width:56ch}
+.hero-center .hero-actions{margin-top:1.2rem}.hero-meta{margin-top:1.4rem}
+.heading{margin-bottom:1.6rem}
+.heading h2{font-size:clamp(1.7rem,3vw,2.5rem);letter-spacing:-.04em;line-height:1.08;text-wrap:balance}
+.heading p.intro{margin-top:.6rem;font-size:.95rem}
+.about{gap:2rem}.avatar{aspect-ratio:4/3;margin:.4rem 0 1rem}
+.t-card{padding:.95rem 1.2rem}.t-card h3{font-size:1.12rem}
+.projects{gap:.9rem}.p-body{padding:.95rem}.p-body h3{font-size:1rem;margin:.35rem 0}
+.p-body p{margin-bottom:.7rem;font-size:.88rem;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+.p-body .tags{margin-bottom:.7rem}
+.research{gap:.9rem}.r-card{padding:1.05rem 1.15rem}.r-card h3{font-size:1.08rem;margin:.6rem 0 .3rem}.r-card>p{margin-bottom:.6rem;font-size:.92rem}
+.field{padding:.4rem 0;font-size:.82rem}
+.filters{margin:.4rem 0 1rem}
+#formNote:empty{display:none}
+
+/* hero portrait */
+.hero-photo{width:92px;height:92px;border-radius:50%;object-fit:cover;object-position:center top;border:2px solid var(--lime2);box-shadow:0 0 0 6px rgba(183,227,94,.14),0 0 40px rgba(183,227,94,.35);margin:.4rem 0 1rem}
